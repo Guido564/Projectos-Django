@@ -1,0 +1,27 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido!</title>
+</head>
+<body>
+    <h1>Datos almacenados:</h1>
+
+    <p>Personas registradas: {{no_personas}}</p>
+
+    <div>
+        <ul>
+            {% for persona in personas_total %}
+                <li>Persona: {{persona.id}} |
+                    Nombre: {{persona.nombre}} {{persona.apellido}} |
+                    Edad: {{persona.edad}}
+                    <br>
+                    <a href="detalle_persona/{{persona.id}}" target="_blank">Ver detalle</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
