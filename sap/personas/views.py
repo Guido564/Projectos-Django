@@ -2,7 +2,7 @@ from django.forms import modelform_factory
 from django.shortcuts import render, get_object_or_404, redirect
 
 from personas.forms import PersonaForm
-from personas.models import Persona
+from personas.models import Persona, Domicilio
 
 
 # Create your views here.
@@ -39,3 +39,7 @@ def eliminarPersona(request, id):
     if persona:
         persona.delete()
     return redirect('index')
+
+def detalleDomicilio(request, id):
+    domicilio = get_object_or_404(Domicilio, pk=id)
+    return render(request, 'domicilios/detalle.html', {'domicilio': domicilio})

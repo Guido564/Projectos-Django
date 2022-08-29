@@ -16,14 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from personas.views import detallePersonas, nuevaPersona, editarPersona, eliminarPersona
-from webapp.views import bienvenido
+from personas.views import detallePersonas, nuevaPersona, editarPersona, eliminarPersona, detalleDomicilio
+from webapp.views import bienvenido, domicilio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', bienvenido, name='index'),
     path('detalle_persona/<int:id>', detallePersonas),
+    path('domicilios/detalle_domicilio/<int:id>', detalleDomicilio),
     path('nueva_persona', nuevaPersona),
     path('editar_persona/<int:id>', editarPersona),
-    path('eliminar_persona/<int:id>', eliminarPersona),
+    path('domicilios/', domicilio, name='dir_menu'),
 ]
