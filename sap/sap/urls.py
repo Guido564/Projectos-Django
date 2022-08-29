@@ -24,5 +24,5 @@ urlpatterns = [
     path('', bienvenido, name='index'),
     path('detalle_persona/<int:id>', detallePersonas),
     path('nueva_persona', nuevaPersona),
-    path('editar_persona', editarPersona)
+    path('editar_persona/<int:id>', editarPersona)
 ]

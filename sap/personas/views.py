@@ -22,13 +22,14 @@ def nuevaPersona(request):
 
     return render(request, 'personas/nuevo.html', {'formaPersona': formaPersona})
 
-def editarPersona(request):
+def editarPersona(request, id):
+    persona = get_object_or_404(Persona, pk=id)
     if request.method == 'POST':
-        formaPersona = PersonaForm(request.POST)
+        formaPersona = PersonaForm(request.POST, instance=persona)
         if formaPersona.is_valid():
             formaPersona.save()
             return redirect('index')
     else:
-        formaPersona = PersonaForm()
+        formaPersona = PersonaForm(instance=persona)
 
-    return render(request, 'personas/nuevo.html', {'formaPersona': formaPersona})
+    return render(request, 'personas/editar.html', {'formaPersona': formaPersona})
