@@ -26,8 +26,8 @@
                 <td>{{persona.id}}
                 <td>{{persona.nombre}} {{persona.apellido}}</td>
                 <td>{{persona.edad}}</td>
-                <td><a href="detalle_persona/{{persona.id}}" target="_blank">Ver</a></td>
-                <td><a href="editar_persona/{{persona.id}}" target="_blank">Editar</a></td>
+                <td><a href="detalle_persona/{{persona.id}}">Ver</a></td>
+                <td><a href="editar_persona/{{persona.id}}">Editar</a></td>
                 <td><a href="eliminar_persona/{{persona.id}}">Eliminar</a></td>
             </tr>
             {% endfor %}
@@ -36,7 +36,7 @@
     </div>
 
     <div>
-        <a href="nueva_persona" target="_blank">Agregar nueva persona</a>
+        <a href="nueva_persona">Agregar nueva persona</a>
         <br>
         <a href="domicilios" target="_blank">Ver Domicilios</a>
         <br>

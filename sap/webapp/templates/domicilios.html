@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Domicilios</title>
@@ -16,9 +16,17 @@
             | Ciudad: {{domicilio.ciudad}}
             | <a href="detalle_domicilio/{{domicilio.id}}">Ver</a>
             | <a href="editar_domicilio/{{domicilio.id}}">Editar</a>
+            | <a href="eliminar_domicilio/{{domicilio.id}}">Eliminar</a>
         </li>
         {% endfor %}
     </ul>
+
+  <div>
+      <a href="nuevo_domicilio">Agregar nuevo domicilio</a>
+      <br>
+      <a href="{% url 'index' %}">Volver a Personas</a>
+  </div>
+
 
 </body>
 </html>
